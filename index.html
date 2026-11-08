@@ -1,0 +1,1821 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yandex引擎入口-俄罗斯搜索导航_跨境搜索工具_入口对比指南</title>
+  <meta name="description" content="yandex引擎入口是面向跨境搜索与俄语信息需求者的导航页面，提供Yandex搜索入口、俄罗斯资讯、翻译工具与使用场景说明，帮助快速定位所需服务。">
+  <meta name="keywords" content="俄罗斯搜索,跨境导航,俄语搜索工具,搜索引擎入口,东欧信息">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23d32f2f'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Arial'%3EY%3C/text%3E%3C/svg%3E">
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #d32f2f;
+      --primary-light: #ffebee;
+      --primary-dark: #b71c1c;
+      --secondary: #1565c0;
+      --secondary-light: #e3f2fd;
+      --text-dark: #1a1a1a;
+      --text-mid: #4a4a4a;
+      --text-light: #757575;
+      --bg-page: #f5f5f5;
+      --bg-card: #ffffff;
+      --border-light: #e0e0e0;
+      --border-mid: #bdbdbd;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md: 0 2px 8px rgba(0,0,0,0.1);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      --sticky-height: 110px;
+      --announce-height: 36px;
+      --header-height: 64px;
+      --channel-height: 44px;
+      --max-width: 1360px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--announce-height) + var(--header-height) + var(--channel-height) + 8px);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-page);
+      color: var(--text-dark);
+      line-height: 1.6;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: var(--announce-height);
+      background: linear-gradient(90deg, #b71c1c 0%, #d32f2f 50%, #e53935 100%);
+      color: #fff;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .announce-bar .tag {
+      background: rgba(255,255,255,0.25);
+      padding: 1px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 999;
+      height: var(--header-height);
+      background: #fff;
+      border-bottom: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 20px;
+      font-family: 'Arial Black', Arial, sans-serif;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.3px;
+    }
+
+    .header-nav {
+      display: flex;
+      gap: 4px;
+      flex: 1;
+    }
+
+    .header-nav a {
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background 0.15s, color 0.15s;
+      white-space: nowrap;
+    }
+
+    .header-nav a:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .header-search {
+      display: flex;
+      align-items: center;
+      background: var(--bg-page);
+      border: 1px solid var(--border-light);
+      border-radius: 20px;
+      padding: 0 14px;
+      height: 36px;
+      gap: 8px;
+      flex-shrink: 0;
+      width: 220px;
+    }
+
+    .header-search input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 13px;
+      width: 100%;
+      color: var(--text-dark);
+    }
+
+    .header-search input::placeholder {
+      color: var(--text-light);
+    }
+
+    .header-search .search-icon {
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    /* 频道导航行 */
+    .channel-bar {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height));
+      z-index: 998;
+      height: var(--channel-height);
+      background: #fafafa;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+    }
+
+    .channel-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      gap: 2px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .channel-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .channel-inner a {
+      padding: 6px 14px;
+      border-radius: 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .channel-inner a:hover {
+      background: #fff;
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, #fff5f5 0%, #ffffff 60%, #f0f4ff 100%);
+      border-bottom: 1px solid var(--border-light);
+      padding: 40px 24px 36px;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.3;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 560px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-mid);
+    }
+
+    .hero-meta-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      background: #fff;
+      color: var(--text-dark);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+    }
+
+    /* 三栏主内容区 */
+    .main-container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 28px 24px 48px;
+      display: grid;
+      grid-template-columns: 180px 1fr 240px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* 左栏 */
+    .left-sidebar {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + var(--channel-height) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .sidebar-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sidebar-card h3 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .sidebar-card ul {
+      list-style: none;
+    }
+
+    .sidebar-card li {
+      margin-bottom: 2px;
+    }
+
+    .sidebar-card li a {
+      display: block;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 13px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .sidebar-card li a:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag-cloud a {
+      display: inline-block;
+      padding: 4px 10px;
+      background: var(--bg-page);
+      border-radius: 12px;
+      font-size: 12px;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .tag-cloud a:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+    }
+
+    /* 中栏 */
+    .center-content {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      min-width: 0;
+    }
+
+    .content-block {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .block-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 12px;
+    }
+
+    .block-header h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-dark);
+      letter-spacing: -0.3px;
+    }
+
+    .block-header .more-link {
+      font-size: 13px;
+      color: var(--primary);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .block-header .more-link:hover {
+      text-decoration: underline;
+    }
+
+    .intro-text p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .intro-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 热门内容卡片 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .content-card {
+      background: var(--bg-page);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      transition: box-shadow 0.15s, transform 0.15s;
+      border: 1px solid transparent;
+    }
+
+    .content-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-light);
+      transform: translateY(-1px);
+    }
+
+    .content-card .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .content-card .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .content-card .card-tags span {
+      font-size: 11px;
+      padding: 1px 8px;
+      border-radius: 10px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+    }
+
+    .content-card .card-desc {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .content-card .card-meta {
+      display: flex;
+      gap: 12px;
+      font-size: 11px;
+      color: var(--text-light);
+    }
+
+    .content-card .card-meta span {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    /* 最新更新列表 */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .update-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-item .update-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .update-item .update-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .update-item .update-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    .update-item .update-summary {
+      font-size: 12px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .update-item .update-time {
+      font-size: 11px;
+      color: var(--text-light);
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .category-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 14px 8px;
+      background: var(--bg-page);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--text-mid);
+      font-size: 13px;
+      font-weight: 500;
+      text-align: center;
+      transition: background 0.15s, color 0.15s;
+      border: 1px solid transparent;
+    }
+
+    .category-item:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    .category-item .cat-icon {
+      font-size: 20px;
+    }
+
+    /* 深度解析 */
+    .deep-dive h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 18px 0 8px;
+    }
+
+    .deep-dive h3:first-of-type {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+
+    .deep-dive ul {
+      margin: 8px 0 12px 20px;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    .deep-dive ul li {
+      margin-bottom: 4px;
+    }
+
+    .deep-dive .highlight-box {
+      background: var(--secondary-light);
+      border-left: 3px solid var(--secondary);
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 14px 0;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .guide-step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .guide-step .step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .guide-step .step-body h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 3px;
+    }
+
+    .guide-step .step-body p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .faq-list details {
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+
+    .faq-list details summary {
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-page);
+      transition: background 0.15s;
+    }
+
+    .faq-list details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-list details summary::after {
+      content: "+";
+      font-size: 18px;
+      color: var(--text-light);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+
+    .faq-list details[open] summary::after {
+      content: "−";
+    }
+
+    .faq-list details summary:hover {
+      background: var(--primary-light);
+    }
+
+    .faq-list details .faq-answer {
+      padding: 12px 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      border-top: 1px solid var(--border-light);
+    }
+
+    /* 用户评论 */
+    .comment-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .comment-item {
+      background: var(--bg-page);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      border: 1px solid transparent;
+    }
+
+    .comment-item .comment-user {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    .comment-item .avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .comment-item .comment-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .comment-item .comment-text {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* 相关资讯 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .news-item {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-item .news-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    .news-item .news-meta {
+      display: flex;
+      gap: 10px;
+      font-size: 11px;
+      color: var(--text-light);
+      margin-bottom: 3px;
+    }
+
+    .news-item .news-summary {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.5;
+    }
+
+    /* 相关推荐标签 */
+    .recommend-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .recommend-tags a {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--bg-page);
+      border-radius: 16px;
+      font-size: 13px;
+      color: var(--text-mid);
+      text-decoration: none;
+      border: 1px solid var(--border-light);
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .recommend-tags a:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* 右栏 */
+    .right-sidebar {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + var(--channel-height) + 16px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .toc-list {
+      list-style: none;
+    }
+
+    .toc-list li {
+      margin-bottom: 2px;
+    }
+
+    .toc-list li a {
+      display: block;
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
+      color: var(--text-mid);
+      text-decoration: none;
+      font-size: 13px;
+      transition: background 0.15s, color 0.15s;
+      border-left: 2px solid transparent;
+    }
+
+    .toc-list li a:hover {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-left-color: var(--primary);
+    }
+
+    .hot-list {
+      list-style: none;
+      counter-reset: hot;
+    }
+
+    .hot-list li {
+      counter-increment: hot;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 13px;
+    }
+
+    .hot-list li:last-child {
+      border-bottom: none;
+    }
+
+    .hot-list li::before {
+      content: counter(hot);
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      background: var(--bg-page);
+      color: var(--text-light);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .hot-list li:nth-child(1)::before,
+    .hot-list li:nth-child(2)::before,
+    .hot-list li:nth-child(3)::before {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .hot-list li a {
+      color: var(--text-mid);
+      text-decoration: none;
+      line-height: 1.4;
+    }
+
+    .hot-list li a:hover {
+      color: var(--primary);
+    }
+
+    /* 页尾 */
+    .site-footer {
+      background: #1a1a1a;
+      color: #b0b0b0;
+      padding: 36px 24px 24px;
+      margin-top: 0;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 28px;
+    }
+
+    .footer-brand .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand .footer-logo .logo-mark {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+    }
+
+    .footer-brand .footer-logo .logo-text {
+      color: #fff;
+      font-size: 17px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #909090;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 5px;
+    }
+
+    .footer-col li a {
+      color: #909090;
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.15s;
+    }
+
+    .footer-col li a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #333;
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: #707070;
+    }
+
+    .footer-bottom .sample-note {
+      color: #707070;
+      font-size: 11px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1100px) {
+      .main-container {
+        grid-template-columns: 160px 1fr;
+      }
+      .right-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .main-container {
+        grid-template-columns: 1fr;
+      }
+      .left-sidebar {
+        display: none;
+      }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .comment-list {
+        grid-template-columns: 1fr;
+      }
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+      }
+      .header-nav {
+        display: none;
+      }
+      .header-search {
+        width: 160px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-content h1 {
+        font-size: 24px;
+      }
+      .header-search {
+        display: none;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+      }
+      .announce-bar {
+        font-size: 11px;
+      }
+    }
+
+    /* 搜索无结果提示 */
+    .no-result-tip {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      color: var(--text-light);
+      font-size: 14px;
+    }
+
+    .no-result-tip.show {
+      display: block;
+    }
+
+    /* 筛选状态 */
+    .content-card.hidden,
+    .update-item.hidden,
+    .news-item.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" id="announce">
+    <span class="tag">更新</span>
+    <span>Yandex 搜索新增俄语实时翻译入口，跨境查询更便捷</span>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/#" class="logo-area" style="text-decoration:none;">
+        <span class="logo-mark">Y</span>
+        <span class="logo-text">yandex引擎入口</span>
+      </a>
+      <nav class="header-nav" aria-label="主导航">
+        <a href="/#intro">简介</a>
+        <a href="/#hot">热门</a>
+        <a href="/#updates">更新</a>
+        <a href="/#categories">分类</a>
+        <a href="/#deep">解析</a>
+        <a href="/#faq">问答</a>
+      </nav>
+      <div class="header-search">
+        <span class="search-icon">🔍</span>
+        <input type="search" id="localSearch" placeholder="搜索本页内容…" aria-label="搜索本页内容">
+      </div>
+    </div>
+  </header>
+
+  <!-- 频道导航行 -->
+  <div class="channel-bar" id="channelNav">
+    <div class="channel-inner">
+      <a href="/#intro">平台简介</a>
+      <a href="/#hot">热门搜索入口</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#categories">分类导航</a>
+      <a href="/#deep">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+    </div>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>yandex引擎入口</h1>
+        <p class="hero-sub">汇集 Yandex 搜索、俄语资讯、翻译工具与跨境查询指南，为需要俄罗斯及东欧信息的用户提供清晰的导航与使用说明。</p>
+        <div class="hero-meta">
+          <span class="hero-meta-item"><span class="hero-meta-dot"></span>搜索入口直达</span>
+          <span class="hero-meta-item"><span class="hero-meta-dot"></span>俄语信息导航</span>
+          <span class="hero-meta-item"><span class="hero-meta-dot"></span>跨境场景说明</span>
+        </div>
+        <div class="hero-actions">
+          <a href="/#hot" class="btn-primary">查看热门入口 →</a>
+          <a href="/#deep" class="btn-secondary">阅读深度解析</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 340 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="20" width="260" height="200" rx="16" fill="#fff" stroke="#e0e0e0" stroke-width="1.5"/>
+          <rect x="40" y="20" width="260" height="40" rx="16" fill="#d32f2f"/>
+          <rect x="40" y="44" width="260" height="16" fill="#d32f2f"/>
+          <circle cx="62" cy="42" r="5" fill="#fff" opacity="0.6"/>
+          <circle cx="78" cy="42" r="5" fill="#fff" opacity="0.4"/>
+          <circle cx="94" cy="42" r="5" fill="#fff" opacity="0.3"/>
+          <rect x="60" y="80" width="220" height="12" rx="6" fill="#f5f5f5"/>
+          <rect x="60" y="100" width="180" height="10" rx="5" fill="#f5f5f5"/>
+          <rect x="60" y="118" width="200" height="10" rx="5" fill="#f5f5f5"/>
+          <rect x="60" y="136" width="140" height="10" rx="5" fill="#f5f5f5"/>
+          <rect x="60" y="160" width="60" height="24" rx="12" fill="#ffebee"/>
+          <rect x="130" y="160" width="70" height="24" rx="12" fill="#e3f2fd"/>
+          <rect x="60" y="194" width="40" height="8" rx="4" fill="#e0e0e0"/>
+          <circle cx="290" cy="210" r="28" fill="#d32f2f" opacity="0.08"/>
+          <circle cx="290" cy="210" r="18" fill="#d32f2f" opacity="0.15"/>
+          <text x="290" y="215" text-anchor="middle" font-size="14" fill="#d32f2f" font-weight="700" font-family="Arial">Y</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 三栏主内容区 -->
+  <div class="main-container">
+
+    <!-- 左栏 -->
+    <aside class="left-sidebar">
+      <div class="sidebar-card">
+        <h3>频道索引</h3>
+        <ul>
+          <li><a href="/#intro">平台简介</a></li>
+          <li><a href="/#hot">热门入口推荐</a></li>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#categories">分类导航</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#recommend">相关推荐</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h3>场景标签</h3>
+        <div class="tag-cloud">
+          <a href="/#hot">跨境查资料</a>
+          <a href="/#hot">俄语搜索</a>
+          <a href="/#hot">东欧市场</a>
+          <a href="/#deep">翻译对照</a>
+          <a href="/#deep">学术文献</a>
+          <a href="/#guide">移动端</a>
+          <a href="/#faq">入口对比</a>
+          <a href="/#recommend">本地化工具</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 中栏 -->
+    <main class="center-content">
+
+      <!-- 1. 内容简介 -->
+      <section class="content-block" id="intro">
+        <div class="block-header">
+          <h2>平台简介：Yandex 搜索与俄语信息导航</h2>
+        </div>
+        <div class="intro-text">
+          <p><strong>yandex引擎入口</strong>是一个围绕俄罗斯主流搜索引擎 Yandex 构建的导航型页面，面向需要查询俄语信息、了解东欧市场动态或进行跨境资料检索的用户。页面把搜索入口、翻译工具、资讯分类和场景说明集中在一起，减少在不同服务之间跳转的步骤。对于经常需要接触俄语网页、学术文献或本地商业信息的读者，这里提供了从入口到使用方法的连贯参考。</p>
+          <p>在内容组织上，页面围绕“俄罗斯搜索导航”与“跨境搜索工具”两个方向展开，覆盖搜索入口、新闻资讯、翻译辅助、分类筛选和常见问题。与单一搜索框不同，这里更强调入口的辨识度和场景匹配——比如查阅俄语新闻时适合关注哪些频道，做学术检索时如何利用翻译对照，以及移动端和桌面端在操作上的区别。</p>
+          <p>页面中的分类名称和标签尽量贴近用户实际会搜索的词，例如“俄语搜索工具”“东欧信息”“搜索引擎入口对比”等，方便按需定位。深度解析部分会解释 Yandex 搜索的基本特点、结果页的构成、常见使用场景和入口选择的依据，帮助初次接触的用户建立整体认知。FAQ 和用户评论则补充了实际体验中的细节和中性评价。</p>
+          <p>无论你是因为工作、学习还是兴趣需要进入俄罗斯搜索生态，这个页面都希望提供一个清晰、可读、不堆砌的起点。所有入口和分类都以导航和说明为目的，不涉及具体账号操作或付费服务。</p>
+        </div>
+      </section>
+
+      <!-- 2. 热门内容推荐 -->
+      <section class="content-block" id="hot">
+        <div class="block-header">
+          <h2>热门搜索入口与工具推荐</h2>
+        </div>
+        <div class="card-grid">
+          <div class="content-card">
+            <div class="card-title">Yandex 网页搜索主入口</div>
+            <div class="card-tags"><span>俄罗斯搜索</span><span>跨境导航</span><span>搜索入口</span></div>
+            <div class="card-desc">直接进入 Yandex 网页搜索界面，适合日常俄语资料查询和东欧市场信息浏览。</div>
+            <div class="card-meta"><span>🔥 热度 9.2</span><span>⭐ 4.7</span><span>🕐 今日更新</span></div>
+          </div>
+          <div class="content-card">
+            <div class="card-title">Yandex 新闻频道聚合</div>
+            <div class="card-tags"><span>俄语资讯</span><span>新闻聚合</span><span>实时动态</span></div>
+            <div class="card-desc">按主题浏览俄罗斯及周边地区新闻，适合关注东欧时事和行业动态的读者。</div>
+            <div class="card-meta"><span>🔥 热度 8.7</span><span>⭐ 4.5</span><span>🕐 2 小时前</span></div>
+          </div>
+          <div class="content-card">
+            <div class="card-title">俄语翻译对照工具入口</div>
+            <div class="card-tags"><span>翻译辅助</span><span>俄语学习</span><span>跨境工具</span></div>
+            <div class="card-desc">提供俄语与中文的对照翻译入口，方便在浏览俄语网页时快速理解关键信息。</div>
+            <div class="card-meta"><span>🔥 热度 8.9</span><span>⭐ 4.6</span><span>🕐 今日更新</span></div>
+          </div>
+          <div class="content-card">
+            <div class="card-title">Yandex 图片搜索入口</div>
+            <div class="card-tags"><span>视觉搜索</span><span>图片检索</span><span>素材查找</span></div>
+            <div class="card-desc">以图搜图或按关键词查找俄语地区图片素材，适合设计参考和内容配图需求。</div>
+            <div class="card-meta"><span>🔥 热度 7.8</span><span>⭐ 4.3</span><span>🕐 1 天前</span></div>
+          </div>
+          <div class="content-card">
+            <div class="card-title">Yandex 地图与本地服务入口</div>
+            <div class="card-tags"><span>本地导航</span><span>东欧地图</span><span>出行参考</span></div>
+            <div class="card-desc">查看俄罗斯及周边城市地图、交通和商户信息，适合跨境出行或本地调研。</div>
+            <div class="card-meta"><span>🔥 热度 7.5</span><span>⭐ 4.2</span><span>🕐 3 天前</span></div>
+          </div>
+          <div class="content-card">
+            <div class="card-title">Yandex 学术文献检索辅助</div>
+            <div class="card-tags"><span>学术搜索</span><span>俄语论文</span><span>文献导航</span></div>
+            <div class="card-desc">面向需要查阅俄语学术资源的用户，整理检索路径和关键词建议。</div>
+            <div class="card-meta"><span>🔥 热度 7.2</span><span>⭐ 4.1</span><span>🕐 5 天前</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 -->
+      <section class="content-block" id="updates">
+        <div class="block-header">
+          <h2>最新更新与热门动态</h2>
+        </div>
+        <div class="update-list">
+          <div class="update-item">
+            <span class="update-num">1</span>
+            <div class="update-body">
+              <div class="update-name">Yandex 搜索界面支持更多语言筛选</div>
+              <div class="update-summary">结果页语言过滤选项增加，跨境检索时可按俄语、英语等条件缩小范围。</div>
+            </div>
+            <span class="update-time">2025-03-18</span>
+          </div>
+          <div class="update-item">
+            <span class="update-num">2</span>
+            <div class="update-body">
+              <div class="update-name">俄语新闻频道新增行业分类标签</div>
+              <div class="update-summary">科技、能源、贸易等垂直分类更清晰，方便按行业追踪东欧动态。</div>
+            </div>
+            <span class="update-time">2025-03-17</span>
+          </div>
+          <div class="update-item">
+            <span class="update-num">3</span>
+            <div class="update-body">
+              <div class="update-name">移动端搜索入口加载速度优化</div>
+              <div class="update-summary">手机浏览器访问搜索首页时响应更快，适合通勤途中快速查询。</div>
+            </div>
+            <span class="update-time">2025-03-16</span>
+          </div>
+          <div class="update-item">
+            <span class="update-num">4</span>
+            <div class="update-body">
+              <div class="update-name">翻译对照入口增加常用短语提示</div>
+              <div class="update-summary">针对搜索场景补充高频俄语短语，降低浏览俄语结果时的理解门槛。</div>
+            </div>
+            <span class="update-time">2025-03-15</span>
+          </div>
+          <div class="update-item">
+            <span class="update-num">5</span>
+            <div class="update-body">
+              <div class="update-name">图片搜索新增按尺寸筛选</div>
+              <div class="update-summary">可按大、中、小尺寸过滤结果，方便快速找到适合的配图素材。</div>
+            </div>
+            <span class="update-time">2025-03-14</span>
+          </div>
+          <div class="update-item">
+            <span class="update-num">6</span>
+            <div class="update-body">
+              <div class="update-name">地图入口补充公共交通图层说明</div>
+              <div class="update-summary">对地铁、公交线路的显示方式做了简要说明，帮助跨境出行者快速上手。</div>
+            </div>
+            <span class="update-time">2025-03-13</span>
+          </div>
+          <div class="update-item">
+            <span class="update-num">7</span>
+            <div class="update-body">
+              <div class="update-name">学术检索页面增加关键词推荐</div>
+              <div class="update-summary">按学科分类提供俄语检索词建议，减少因语言差异造成的检索遗漏。</div>
+            </div>
+            <span class="update-time">2025-03-12</span>
+          </div>
+          <div class="update-item">
+            <span class="update-num">8</span>
+            <div class="update-body">
+              <div class="update-name">夜间模式阅读体验调整</div>
+              <div class="update-summary">部分导航页面在暗光环境下对比度优化，长时间浏览更舒适。</div>
+            </div>
+            <span class="update-time">2025-03-11</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="content-block" id="categories">
+        <div class="block-header">
+          <h2>分类导航：按场景查找入口</h2>
+        </div>
+        <div class="category-grid">
+          <a href="/#hot" class="category-item">
+            <span class="cat-icon">🔍</span>
+            <span>网页搜索</span>
+          </a>
+          <a href="/#hot" class="category-item">
+            <span class="cat-icon">📰</span>
+            <span>俄语资讯</span>
+          </a>
+          <a href="/#hot" class="category-item">
+            <span class="cat-icon">🖼️</span>
+            <span>图片素材</span>
+          </a>
+          <a href="/#hot" class="category-item">
+            <span class="cat-icon">🗺️</span>
+            <span>地图出行</span>
+          </a>
+          <a href="/#hot" class="category-item">
+            <span class="cat-icon">📚</span>
+            <span>学术文献</span>
+          </a>
+          <a href="/#hot" class="category-item">
+            <span class="cat-icon">🌐</span>
+            <span>翻译对照</span>
+          </a>
+          <a href="/#hot" class="category-item">
+            <span class="cat-icon">📈</span>
+            <span>市场动态</span>
+          </a>
+          <a href="/#hot" class="category-item">
+            <span class="cat-icon">🧭</span>
+            <span>入口对比</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析正文 -->
+      <section class="content-block deep-dive" id="deep">
+        <div class="block-header">
+          <h2>深度解析：Yandex 搜索入口的使用场景与选择思路</h2>
+        </div>
+        <p>对于不熟悉俄语环境的用户来说，第一次接触 <strong>yandex引擎入口</strong> 时最容易产生的问题不是“怎么打开”，而是“打开之后看什么”以及“在什么情况下应该用它而不是其他搜索工具”。这一部分围绕搜索入口的实际使用场景展开，帮助建立判断依据。</p>
+
+        <h3>Yandex 搜索在哪些场景下更有优势</h3>
+        <p>Yandex 是俄罗斯本土使用率最高的搜索引擎之一，对俄语网页的收录深度和本地化结果的丰富程度较高。如果你的查询目标涉及俄罗斯及周边地区的新闻、商业信息、学术资料或本地服务，使用 Yandex 往往能获得比通用搜索引擎更细的结果。例如查询俄语新闻事件时，Yandex 新闻聚合的时效性和覆盖范围通常更贴近本地视角。</p>
+        <p>另一个典型场景是图片和视频素材检索。Yandex 的视觉搜索支持以图搜图，在需要查找俄语地区特有的设计素材或地理图片时，结果的相关性表现较好。对于做跨境内容运营或市场调研的用户，这一功能可以减少反复切换平台的时间。</p>
+
+        <h3>搜索结果页的构成与阅读顺序</h3>
+        <p>打开 Yandex 搜索后，结果页通常包含几个区域：顶部搜索框与筛选栏、自然搜索结果列表、图片/视频/新闻等垂直入口，以及右侧或底部的相关推荐。建议先看筛选栏中的语言和时间选项，再浏览自然结果。俄语网页的标题和摘要可能包含缩写或本地术语，配合翻译工具入口对照阅读会更顺畅。</p>
+        <div class="highlight-box">
+          <strong>提示：</strong>在浏览俄语结果时，可以同时打开翻译对照工具，将关键段落粘贴对照，降低理解成本。页面左栏的场景标签也提供了“翻译对照”等快捷入口。
+        </div>
+
+        <h3>不同入口之间的比较与选择</h3>
+        <p>Yandex 旗下有多个产品入口，包括网页搜索、新闻、图片、地图和翻译等。选择哪个入口取决于你的任务类型：</p>
+        <ul>
+          <li><strong>需要快速了解某事件：</strong>优先使用新闻入口，按时间排序浏览。</li>
+          <li><strong>查找图片或视觉参考：</strong>使用图片搜索，可按尺寸和颜色筛选。</li>
+          <li><strong>核实地点或交通信息：</strong>使用地图入口，查看公共交通图层。</li>
+          <li><strong>阅读俄语长文或论文：</strong>先通过网页搜索定位，再用翻译工具辅助。</li>
+        </ul>
+        <p>与通用搜索相比，Yandex 的本地化结果更丰富，但也意味着部分内容可能只提供俄语版本。如果你对俄语不熟悉，建议把翻译工具放在手边，或在搜索时加入英文关键词作为补充。</p>
+
+        <h3>移动端与桌面端的使用差异</h3>
+        <p>移动端访问 Yandex 搜索时，界面更紧凑，筛选选项折叠在按钮中，适合快速查询。桌面端则能同时展示更多结果和垂直入口，适合深度浏览。页面提供的导航入口在两种设备上均可访问，手机端频道栏支持横向滑动，方便切换栏目。</p>
+
+        <h3>入口选择中的常见误区</h3>
+        <p>一个常见的误区是认为“入口越多越好”，实际上同时打开多个搜索平台反而会分散注意力。建议根据任务类型固定使用一两个入口，比如日常资讯用新闻频道，学术资料用网页搜索配合翻译。另一个误区是忽略语言筛选，导致结果中混入大量非目标语言页面。在搜索框下方或筛选栏中设置语言条件，可以显著提高结果的相关性。</p>
+        <p>总体而言，<strong>yandex引擎入口</strong> 的价值在于把分散的搜索服务组织成可理解的导航结构，让用户按场景而不是按产品名称去寻找工具。理解每个入口的定位，比记住一堆网址更实用。</p>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section class="content-block" id="guide">
+        <div class="block-header">
+          <h2>体验指南：页面结构与查找方式</h2>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <span class="step-num">1</span>
+            <div class="step-body">
+              <h4>从频道导航开始</h4>
+              <p>页头下方的频道栏按内容类型划分了平台简介、热门入口、最新动态、分类导航等模块，点击即可跳转到对应区域，适合快速定位。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">2</span>
+            <div class="step-body">
+              <h4>使用搜索框筛选本页内容</h4>
+              <p>页头右侧的搜索框支持对本页可见文字进行即时查找，输入关键词后，不匹配的卡片和列表项会隐藏，并给出无结果提示。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">3</span>
+            <div class="step-body">
+              <h4>按分类或标签缩小范围</h4>
+              <p>左栏的场景标签和分类导航中的类别名称都对应具体使用场景，例如“俄语搜索”“跨境查资料”，点击后跳转到热门入口区域继续浏览。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">4</span>
+            <div class="step-body">
+              <h4>移动端横向滑动频道</h4>
+              <p>在手机上，频道栏支持左右滑动，左右侧栏内容会依次排列在主内容之后，不影响正文阅读。所有跳转链接都设置了滚动偏移，不会被吸顶栏遮挡。</p>
+            </div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">5</span>
+            <div class="step-body">
+              <h4>通过 FAQ 和推荐延伸阅读</h4>
+              <p>常见问题折叠区回答了入口对比、更新频率、适用人群等疑问；相关推荐标签提供了更多可搜索的内容方向，方便继续探索。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="content-block" id="faq">
+        <div class="block-header">
+          <h2>常见问题：关于 Yandex 搜索入口</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Yandex 搜索主要适合查找什么类型的内容？</summary>
+            <div class="faq-answer">Yandex 对俄语网页的收录较全面，适合查找俄罗斯及周边地区的新闻资讯、商业信息、学术文献、图片素材和本地服务。如果你需要的是东欧地区的本地化信息，它的结果相关性通常比通用搜索引擎更高。</div>
+          </details>
+          <details>
+            <summary>使用 Yandex 搜索需要懂俄语吗？</summary>
+            <div class="faq-answer">不强制要求，但懂一些基础俄语或配合翻译工具会明显提升效率。Yandex 支持用英文或其他语言输入关键词，结果中也会出现部分非俄语页面。页面提供的翻译对照入口可以帮助理解俄语结果摘要。</div>
+          </details>
+          <details>
+            <summary>Yandex 和其他搜索引擎相比有什么不同？</summary>
+            <div class="faq-answer">主要差异在于本地化深度。Yandex 对俄语网页的索引更细，新闻聚合和地图服务与本地生活结合更紧。如果你主要搜索中文或英文内容，通用搜索引擎可能更顺手；如果目标区域是俄罗斯或东欧，Yandex 的入口更直接。</div>
+          </details>
+          <details>
+            <summary>这个页面提供的入口和直接访问 Yandex 有什么区别？</summary>
+            <div class="faq-answer">页面把搜索、新闻、图片、地图、翻译等入口按场景组织在一起，并附有使用说明和对比分析，适合初次接触或需要快速定位功能的用户。直接访问 Yandex 则获得完整的产品界面，两者是导航与目的地的关系。</div>
+          </details>
+          <details>
+            <summary>Yandex 的搜索结果一般多久更新一次？</summary>
+            <div class="faq-answer">网页索引持续更新，新闻类结果通常以分钟到小时级刷新。具体频率取决于内容类型和来源网站。页面的“最新更新”板块仅展示导航页自身的动态，不反映 Yandex 搜索的实时索引状态。</div>
+          </details>
+          <details>
+            <summary>在手机上使用这些入口方便吗？</summary>
+            <div class="faq-answer">方便。Yandex 的移动端搜索界面经过适配，加载速度较快。本页面在手机端会收起左右侧栏，频道导航支持横向滑动，正文阅读不需要缩放。建议在 Wi-Fi 或稳定网络下使用翻译和图片搜索功能。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="content-block" id="comments">
+        <div class="block-header">
+          <h2>用户评论与使用反馈</h2>
+        </div>
+        <div class="comment-list">
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">林</span><span class="comment-name">林间小路</span></div>
+            <div class="comment-text">做东欧市场调研时经常用，新闻入口的行业分类挺实用，能快速扫到相关动态。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">陈</span><span class="comment-name">陈默</span></div>
+            <div class="comment-text">翻译对照入口对俄语阅读帮助很大，不用来回切换软件，页面结构也清楚。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">王</span><span class="comment-name">王小雨</span></div>
+            <div class="comment-text">图片搜索用来找素材还不错，按尺寸筛选比较方便，就是俄语界面需要适应一下。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">赵</span><span class="comment-name">赵一鸣</span></div>
+            <div class="comment-text">入口整理得比较全，适合刚开始接触俄罗斯搜索的人，省去自己收藏夹里翻找。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">刘</span><span class="comment-name">刘思远</span></div>
+            <div class="comment-text">地图入口的公共交通说明有点简略，希望以后能补充更多城市细节。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">周</span><span class="comment-name">周芷若</span></div>
+            <div class="comment-text">学术文献检索的关键词推荐很实用，俄语搜索词一直是我的短板，这个提醒很及时。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">吴</span><span class="comment-name">吴天</span></div>
+            <div class="comment-text">页面加载速度可以，手机上滑动频道栏不卡，内容也没有堆砌感。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">郑</span><span class="comment-name">郑好</span></div>
+            <div class="comment-text">FAQ 里的问题挺实在的，尤其是“需不需要懂俄语”那条，说到点子上了。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">孙</span><span class="comment-name">孙一凡</span></div>
+            <div class="comment-text">热门入口卡片上的标签能直接点就好了，现在只能看，希望以后加链接。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">李</span><span class="comment-name">李慕白</span></div>
+            <div class="comment-text">整体是导航型页面，不像内容站那么重，适合当工作台首页用。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">黄</span><span class="comment-name">黄蓉</span></div>
+            <div class="comment-text">评论区的中性评价挺真实的，不是清一色夸，这样反而更有参考价值。</div>
+          </div>
+          <div class="comment-item">
+            <div class="comment-user"><span class="avatar">徐</span><span class="comment-name">徐霞客</span></div>
+            <div class="comment-text">希望深度解析部分能再加一些实际搜索案例，现在偏概述，不过瘾。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="content-block" id="news">
+        <div class="block-header">
+          <h2>相关资讯与行业动态</h2>
+        </div>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-title">俄罗斯搜索市场最新份额变化</div>
+            <div class="news-meta"><span>2025-03-18</span><span>来源：示例资讯</span></div>
+            <div class="news-summary">本地搜索平台在移动端的渗透率继续上升，Yandex 在新闻和地图服务上的使用时长有所增加。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">跨境搜索工具在贸易调研中的应用</div>
+            <div class="news-meta"><span>2025-03-16</span><span>来源：示例资讯</span></div>
+            <div class="news-summary">越来越多中小外贸企业使用俄语搜索入口查找本地供应商信息，翻译辅助成为关键环节。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">Yandex 翻译更新俄语术语库</div>
+            <div class="news-meta"><span>2025-03-14</span><span>来源：示例资讯</span></div>
+            <div class="news-summary">新增多个技术领域的专业词汇翻译，对学术文献和行业报告阅读有一定帮助。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">东欧图片素材需求增长</div>
+            <div class="news-meta"><span>2025-03-12</span><span>来源：示例资讯</span></div>
+            <div class="news-summary">设计行业对俄罗斯及周边地区视觉素材的检索需求上升，图片搜索入口的使用频率提高。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">移动端搜索体验优化趋势</div>
+            <div class="news-meta"><span>2025-03-10</span><span>来源：示例资讯</span></div>
+            <div class="news-summary">主流搜索引擎继续压缩移动端首屏加载时间，筛选和翻译功能被前置到更显眼的位置。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">俄语学术资源检索方式变化</div>
+            <div class="news-meta"><span>2025-03-08</span><span>来源：示例资讯</span></div>
+            <div class="news-summary">开放获取文献增多，通过搜索引擎入口配合关键词建议，成为查找俄语论文的常见路径。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="content-block" id="recommend">
+        <div class="block-header">
+          <h2>相关推荐与内容方向</h2>
+        </div>
+        <div class="recommend-tags">
+          <a href="/#hot">俄语新闻实时跟踪</a>
+          <a href="/#deep">Yandex 图片搜索技巧</a>
+          <a href="/#guide">跨境搜索移动端操作</a>
+          <a href="/#faq">Yandex 与通用搜索对比</a>
+          <a href="/#hot">东欧市场数据查找</a>
+          <a href="/#deep">俄语学术文献检索路径</a>
+          <a href="/#guide">翻译工具配合搜索方法</a>
+          <a href="/#categories">本地服务与地图入口</a>
+        </div>
+      </section>
+
+      <!-- 11. 精选内容 / 趋势观察 -->
+      <section class="content-block" id="trend">
+        <div class="block-header">
+          <h2>趋势观察：跨境搜索行为的变化</h2>
+        </div>
+        <p style="font-size:14px;color:var(--text-mid);line-height:1.8;margin-bottom:10px;">从近期的使用反馈来看，跨境搜索行为正在从“单一入口依赖”转向“按场景切换入口”。做贸易调研的用户会更频繁地在新闻、地图和翻译之间跳转；学术用户则倾向于先用网页搜索定位，再用翻译工具精读。这种变化对导航页面提出了更高要求——入口不仅要全，还要说明各自适合什么情况。</p>
+        <p style="font-size:14px;color:var(--text-mid);line-height:1.8;">另一个值得注意的趋势是移动端占比提升。通勤途中用手机快速查询俄语资讯或图片素材的场景增多，页面在手机上的频道导航和搜索筛选体验因此变得更重要。未来，入口的加载速度和筛选的直观程度可能比功能数量更影响使用选择。</p>
+      </section>
+
+    </main>
+
+    <!-- 右栏 -->
+    <aside class="right-sidebar">
+      <div class="sidebar-card">
+        <h3>页内目录</h3>
+        <ul class="toc-list">
+          <li><a href="/#intro">平台简介</a></li>
+          <li><a href="/#hot">热门入口推荐</a></li>
+          <li><a href="/#updates">最新更新</a></li>
+          <li><a href="/#categories">分类导航</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问题</a></li>
+          <li><a href="/#comments">用户评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#recommend">相关推荐</a></li>
+          <li><a href="/#trend">趋势观察</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h3>热门条目</h3>
+        <ul class="hot-list">
+          <li><a href="/#hot">Yandex 网页搜索主入口</a></li>
+          <li><a href="/#hot">俄语翻译对照工具</a></li>
+          <li><a href="/#hot">Yandex 新闻聚合</a></li>
+          <li><a href="/#hot">图片搜索与素材查找</a></li>
+          <li><a href="/#hot">地图与本地服务</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-card">
+        <h3>延伸阅读</h3>
+        <ul class="toc-list">
+          <li><a href="/#deep">搜索入口场景对比</a></li>
+          <li><a href="/#deep">结果页阅读顺序</a></li>
+          <li><a href="/#faq">是否需懂俄语</a></li>
+          <li><a href="/#guide">移动端使用要点</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-mark">Y</span>
+            <span class="logo-text">yandex引擎入口</span>
+          </div>
+          <p>面向跨境搜索与俄语信息需求的导航页面，整理搜索入口、场景说明与使用参考，帮助快速定位所需服务。</p>
+        </div>
+        <div class="footer-col">
+          <h4>主要内容</h4>
+          <ul>
+            <li><a href="/#intro">平台简介</a></li>
+            <li><a href="/#hot">热门入口</a></li>
+            <li><a href="/#updates">最新更新</a></li>
+            <li><a href="/#categories">分类导航</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>使用参考</h4>
+          <ul>
+            <li><a href="/#deep">深度解析</a></li>
+            <li><a href="/#guide">体验指南</a></li>
+            <li><a href="/#faq">常见问题</a></li>
+            <li><a href="/#trend">趋势观察</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>互动与推荐</h4>
+          <ul>
+            <li><a href="/#comments">用户评论</a></li>
+            <li><a href="/#news">相关资讯</a></li>
+            <li><a href="/#recommend">相关推荐</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 yandex引擎入口 · 导航页面</span>
+        <span class="sample-note">部分内容为示例数据，仅用于展示页面结构</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 内联脚本：本地搜索筛选 + FAQ 行为增强 -->
+  <script>
+    (function() {
+      // 本地搜索：筛选卡片标题和列表项
+      const searchInput = document.getElementById('localSearch');
+      if (searchInput) {
+        searchInput.addEventListener('input', function(e) {
+          const query = e.target.value.trim().toLowerCase();
+          const cards = document.querySelectorAll('.content-card');
+          const updateItems = document.querySelectorAll('.update-item');
+          const newsItems = document.querySelectorAll('.news-item');
+          const commentItems = document.querySelectorAll('.comment-item');
+          const allFilterable = [...cards, ...updateItems, ...newsItems, ...commentItems];
+          let visibleCount = 0;
+
+          allFilterable.forEach(el => {
+            const text = el.textContent.toLowerCase();
+            const match = query === '' || text.includes(query);
+            el.classList.toggle('hidden', !match);
+            if (match) visibleCount++;
+          });
+
+          // 无结果提示（若已有提示则复用）
+          let tip = document.querySelector('.no-result-tip');
+          if (!tip) {
+            tip = document.createElement('div');
+            tip.className = 'no-result-tip';
+            tip.textContent = '没有找到匹配的内容，请尝试其他关键词。';
+            document.querySelector('.center-content').prepend(tip);
+          }
+          tip.classList.toggle('show', visibleCount === 0 && query !== '');
+          if (query === '') tip.classList.remove('show');
+        });
+      }
+
+      // 确保详情折叠键盘可操作
+      const details = document.querySelectorAll('details');
+      details.forEach(d => {
+        d.addEventListener('keydown', (ev) => {
+          if (ev.key === 'Enter' || ev.key === ' ') {
+            ev.preventDefault();
+            d.open = !d.open;
+          }
+        });
+      });
+
+      // 频道栏点击平滑滚动，偏移已由 scroll-padding 处理
+      const channelLinks = document.querySelectorAll('.channel-inner a, .header-nav a, .sidebar-card a[href^="/#"], .toc-list a[href^="/#"], .recommend-tags a[href^="/#"]');
+      channelLinks.forEach(link => {
+        link.addEventListener('click', function(ev) {
+          const href = this.getAttribute('href');
+          if (href && href.startsWith('/#')) {
+            const targetId = href.substring(2);
+            const target = document.getElementById(targetId);
+            if (target) {
+              // 正常跳转，scroll-padding-top 已处理偏移
+            }
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+  </html>
